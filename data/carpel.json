@@ -1,0 +1,36 @@
+{
+  "data": {
+    "name": "Carpel Tunnel",
+    "treatments": {
+      "acupuncture-for-condition-carpal-tunnel-syndrome-wrist-hand": {
+        "description": "Acupuncture is an alternative treatment to consider when conventional measures ...",
+        "display_name": "Acupuncture"
+      },
+      "brace-splint-or-other-device-to-immobilize-support-joint-for-condition-carpal-tunnel-syndrome-wrist-hand": {
+        "description": "If you have carpal tunnel syndrome, your doctor may suggest wearing a brace, splint...",
+        "display_name": "Brace/splint/cast"
+      },
+      "changing-hand-position-for-repetitive-tasks-for-ex-typing-for-condition-carpal-tunnel-syndrome-wrist-hand": {
+        "description": "Ergonomic changes - including keyboard modification and altering hand position to minimize...",
+        "display_name": "Change hand position"
+      },
+      "heating-pads-for-condition-carpal-tunnel-syndrome-wrist-hand": {
+        "description": "Heat therapy isn't a common treatment to relieve carpal tunnel syndrome symptoms,...",
+        "display_name": "Heating Pads"
+      },
+      "injections-for-pain-relief-for-condition-carpal-tunnel-syndrome-wrist-hand": {
+        "description": "Local steroid injections are one option for reducing carpal tunnel syndrome symptoms and...",
+        "display_name": "Injections"
+      },
+      "modify-activity-to-avoid-pain-for-condition-carpal-tunnel-syndrome-wrist-hand": {
+        "description": "Ergonomic changes - including keyboard modification and altering hand position...",
+        "display_name": "Modify activity"
+      },
+      "occupational-therapy-for-condition-carpal-tunnel-syndrome-wrist-hand": {
+        "description": "Techniques performed by an occupational or physical therapist - such as wrist ...",
+        "display_name": "Occupational therapy"
+      }
+    }
+  }
+}
+
