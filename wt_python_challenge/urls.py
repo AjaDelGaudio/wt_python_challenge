@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from rest_framework import routers
 from conditions import views
+from django.contrib import admin
+admin.autodiscover()
 
 router = routers.DefaultRouter()
 router.register(r'conditions', views.ConditionViewSet)

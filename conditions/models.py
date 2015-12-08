@@ -1,5 +1,7 @@
 from django.db import models
 from conditions.serializer import ConditionSerializer, TreatmentSerializer 
+from django.contrib import admin
+
 # Create your models here.
 
 class Condition(models.Model):
