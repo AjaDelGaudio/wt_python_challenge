@@ -1,0 +1,46 @@
+From 1f232f4a06c68b9b3e9607cebdc790b04b133f89 Mon Sep 17 00:00:00 2001
+From: wt-test <ajadelgaudio@gmail.com>
+Date: Sat, 5 Dec 2015 11:51:47 -0500
+Subject: [PATCH 1/1] add routes
+
+---
+ conditions/routers.py | 29 +++++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
+
+diff --git a/conditions/routers.py b/conditions/routers.py
+index e69de29..28bc16d 100644
+--- a/conditions/routers.py
++++ b/conditions/routers.py
+@@ -0,0 +1,29 @@
++from conditions import route_handler
++from conditions.route_handler import ModelRouter
++from conditions.models import Condition, Treatment
++from conditions.serializers import ConditionSerializer, TreatmentSerializer
++
++class ConditionRouter(ModelRouter):
++    route_name = 'condition'
++    serializer_class = ConditionSerializer
++    model = Conditiion
++
++    def get_object(self, **kwargs):
++        return self.model.objects.get(pk=kwargs['id'])
++
++    def get_query_set(self, **kwargs):
++        return self.model.objects.all()
++
++class TreatmentRouter(ModelRouter):
++    route_name = 'treatment'
++    serializer_class = TreatmentSerializer
++    model = Treatment
++
++    def get_object(self, **kwargs):
++        return self.model.objects.get(pk=kwargs['id'])
++
++    def get_query_set(self, **kwargs):
++        return self.model.objects.filter(condition_id=kwargs['treatment_id'])
++
++route_handler.register(ConditionRouter)
++route_handler.register(TreatmentRouter)
+-- 
+1.9.1
+
