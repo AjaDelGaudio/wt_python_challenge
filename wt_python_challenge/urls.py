@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from rest_framework import routers
+from rest_framework.url_patterns import routers
 from conditions.views import ConditionViewSet
 
 router = routers.DefaultRouter()
@@ -25,4 +25,6 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api/$', views.ConditionList.as_view()),
+    url(r'^api/$', views.TreatmentList.as_view())
 ]
