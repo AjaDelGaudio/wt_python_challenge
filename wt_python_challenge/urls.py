@@ -13,20 +13,17 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import patterns, include, url
-from django.contrib import admin
-from rest_framework.urlpatterns import router
-from conditions.views import ConditionViewSet, TreatmentViewSet
+from django.conf.urls import url, include
+from rest_framework import routers
+from conditions import views
 
 router = routers.DefaultRouter()
-router.register(r'conditions', ConditionViewSet)
+router.register(r'conditions', views.ConditionViewSet)
+router.register(r'treatmetns', views.TreatmentViewSet)
 
-urlpatterns = patterns['',
+urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^$', views.index, name='index'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^api/$', views.ConditionViewSet.as_view()),
-    url(r'^api/$', views.TreatmentViewSet.as_view()),
-    url(r'^conditions/', include('conditions.urls'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
+

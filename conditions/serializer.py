@@ -1,5 +1,5 @@
+from django.db import models
 from rest_framework import serializers
-from conditions.serializer import serializers
 
 class ConditionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -18,7 +18,7 @@ class ConditionSerializer(serializers.HyperlinkedModelSerializer):
 class TreatmentSerializer(serializers.HyperlinkedModelSerializer):
     condition = ConditionSerializer(serializers.HyperlinkedRelatedField)
     class Meta:
-        model = 'conditions.Treatment'
+        model = 'condtions.Treatment'
         fields = ('id', 'condition', 'treatment_name', 'description', 'display_name',)
 
     def create(self, validated_data):
