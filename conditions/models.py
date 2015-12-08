@@ -1,17 +1,6 @@
 from django.db import models
 from conditions.serializer import ConditionSerializer, TreatmentSerializer 
-
 # Create your models here.
-
-class Treatment(models.Model):
-    serializer_class = TreatmentSerializer
-    condition = models.ForeignKey(Condition)
-    treatment_name = models.CharField(max_length=256, blank=False, help_text="name of treatment")
-    description = models.CharField(max_length=500, blank=True, help_text="description of treatment")
-    display_name = models.CharField(max_length=256, blank=True, help_text="display name of treatment")
-
-    def __str__(self):
-        return self.treatment_text
 
 class Condition(models.Model):
     serializer_class = ConditionSerializer
