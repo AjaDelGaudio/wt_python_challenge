@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from rest_framework.url_patterns import routers
+from rest_framework.url_patterns import format_suffix_patterns
 from conditions.views import ConditionViewSet
 
 router = routers.DefaultRouter()
@@ -31,4 +31,4 @@ urlpatterns = ('',
     url(r'^conditions/', include('conditions.urls'))
 )
 
-urlpattern = routers
+urlpattern = format_suffix_patterns(urlpatterns)
