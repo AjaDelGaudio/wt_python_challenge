@@ -31,4 +31,4 @@ urlpatterns = ('',
     url(r'^conditions/', include('conditions.urls'))
 )
 
-urlpattern = format_suffix_patterns(url_patterns)
+urlpattern = routers
