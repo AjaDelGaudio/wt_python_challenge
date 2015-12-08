@@ -13,15 +13,15 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url
+from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from rest_framework.url_patterns import format_suffix_patterns
-from conditions.views import ConditionViewSet
+from rest_framework.urlpatterns import router
+from conditions.views import ConditionViewSet, TreatmentViewSet
 
 router = routers.DefaultRouter()
 router.register(r'conditions', ConditionViewSet)
 
-urlpatterns = ('',
+urlpatterns = patterns['',
     url(r'^', include(router.urls)),
     url(r'^$', views.index, name='index'),
     url(r'^admin/', include(admin.site.urls)),
@@ -29,6 +29,4 @@ urlpatterns = ('',
     url(r'^api/$', views.ConditionViewSet.as_view()),
     url(r'^api/$', views.TreatmentViewSet.as_view()),
     url(r'^conditions/', include('conditions.urls'))
-)
-
-urlpatterns = format_suffix_patterns(urlpatterns)
+]
