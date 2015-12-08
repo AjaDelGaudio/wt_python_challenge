@@ -21,10 +21,14 @@ from conditions.views import ConditionViewSet
 router = routers.DefaultRouter()
 router.register(r'conditions', ConditionViewSet)
 
-urlpatterns = [
+urlpatterns = ('',
     url(r'^', include(router.urls)),
+    url(r'^$', views.index, name='index'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^api/$', views.ConditionViewSet.as_view()),
     url(r'^api/$', views.TreatmentViewSet.as_view()),
-]
+    url(r'^conditions/', include('conditions.urls'))
+)
+
+urlpattern = format_suffix_patterns(url_patterns)
