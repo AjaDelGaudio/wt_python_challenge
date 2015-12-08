@@ -11,9 +11,9 @@ class TreatmentSerializer(serializers.HyperlinkedModelSerializer):
 
     def update(self, instance, validated_data):
         instance.condition = validated_data.get('condition', instance.condition)
-        instance.treatment_name = validated_data.get('treatment_name', instance.treatmen$
+        instance.treatment_name = validated_data.get('treatment_name', instance.treatment_name)
         instance.description = validated_data.get('description', instance.description)
-        instance.display_name = validated_data.get('display_name', instance.display_name$
+        instance.display_name = validated_data.get('display_name', instance.display_name)
         instance.save()
         return instance
 
