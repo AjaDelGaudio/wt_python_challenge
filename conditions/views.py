@@ -7,10 +7,10 @@ from conditions.models import Condition, Treatment
 
 class ConditionViewSet(conditions.ViewSetCreatAPIView):
     queryset = Condition.objects.all()
-    serializer = ConditionSerializer
+    serializer_class = ConditionSerializer
 
 class TreatmentViewSet(conditions.ViewSetCreateAPIView):
     queryset = Treatment.objects.all()
-    serializer = TreatmentSerializer
+    serializer_class = TreatmentSerializer
 
 
