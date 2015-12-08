@@ -31,4 +31,4 @@ urlpatterns = ('',
     url(r'^conditions/', include('conditions.urls'))
 )
 
-urlpattern = format_suffix_patterns(urlpatterns)
+urlpatterns = format_suffix_patterns(urlpatterns)
