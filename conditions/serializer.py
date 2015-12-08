@@ -3,7 +3,7 @@ from conditions.serializer import serializers
 
 class TreatmentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Treatment
+        model = 'conditions.Treatment'
         fields = ('id', 'condition', 'treatment_name', 'description', 'display_name',)
 
     def create(self, validated_data):
@@ -21,7 +21,7 @@ class TreatmentSerializer(serializers.HyperlinkedModelSerializer):
 class ConditionSerializer(serializers.HyperlinkedModelSerializer):
     treatments = TreatmentSerializer()
     class Meta:
-        model = Condition
+        model = 'conditions.Treatment'
         fields = ('id', 'name', 'treatments',)
 
     def create(self, validated_data):
